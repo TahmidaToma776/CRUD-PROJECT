@@ -1,5 +1,6 @@
 let regForm = document.querySelector(".register-form");
 let allInput = regForm.querySelector("INPUT");
+let closeBtn = document.querySelector("btn-close");
 let allRegData = [];
 
 if (allInput.length >= 5) {
@@ -11,6 +12,12 @@ if (allInput.length >= 5) {
         password: allInput[4].value
     });
     localStorage.setItem("allRegData", JSON.stringify(allRegData));
+    swal("Data Inserted","successfully !","success");
     closeBtn.click();
     regForm.reset('');
+
 } 
+else{
+    swal("Email already exist","failed","warning");
+}
+ 
